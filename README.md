@@ -13,10 +13,23 @@
 >
 > Tested on a GPU with MOSS-Image (RTX 4090, Windows); the other picture models share the same code. To use it, install as described below, but from this repository: `git clone https://github.com/pastuh/Fizgig.git`. The updater then updates from this fork. Full description and test notes: [shootthesound/Fizgig#362](https://github.com/shootthesound/Fizgig/pull/362).
 
+**Example: a smile slider over 12 epochs**
+
+| Box | What changes from epoch to epoch |
+|---|---|
+| What the picture is | a close-up photo of a woman (epochs 1-3), of a man (4-6), the woman again (7-9), the man again (10-12). A description that comes back reuses its practice pictures. |
+| +1 end adds | a slight smile → smiling, teeth showing → laughing, mouth wide open, eyes closed → beaming, eyes crinkled, three epochs each, with *tongue out playfully* joined in every 3rd epoch |
+| −1 end adds (paired with +1) | a neutral expression → frowning → scowling, lips pressed together → sad, mouth turned down, eyes shut tight, with *nose wrinkled in disgust* joined in every 3rd epoch from epoch 2 |
+| Push strength | a Slide: 1.5 until epoch 3, then rising to 3 by epoch 10 |
+| Leave these alone | a bowl of fruit on a wooden table for the whole run, and a city street at night from epoch 7 |
+| Adjust each section | epochs 1-3 at half the learning rate; epochs 10-12 hold the Leave-these-alone prompts tighter (how firmly 1.5) |
+
+The dial learns the smile step by step - a slight smile first, then teeth, then a laugh - on different people, with small details mixed in, and the plan shows exactly what each epoch trains on before you press Start.
+
 <details>
-<summary><b>Screenshot:</b> the Slider card with the switch on</summary>
+<summary><b>Screenshot</b> of this example: the Slider card with the switch on</summary>
 <br>
-<img src="https://github.com/user-attachments/assets/274b0648-6a6b-4c36-a9d0-4333b9c8667a" width="700" alt="The Slider card with Change the prompts during the run on: two pairs of +1/-1 lines changing at epoch 5, push strength as a Split, and the plan below">
+<img src="docs/images/advanced-prompt-slider.png" width="780" alt="The Slider card with Change the prompts during the run on: four pairs of +1/-1 lines changing every 3 epochs, two lines joined in every 3rd epoch, push strength as a Slide, two Leave-these-alone lines and the plan of all 12 epochs with Adjust each section">
 </details>
 
 ---
