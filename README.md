@@ -1,3 +1,26 @@
+> [!NOTE]
+> **This fork adds advanced prompt sliders to [Fizgig](https://github.com/shootthesound/Fizgig).** It is based on Fizgig 9.7.4 by shootthesound; everything else is the original, and the original README follows below.
+>
+> A switch on the Slider card, **Change the prompts during the run (advanced)**, lets a prompt slider train on different words at different stages of a run, so the dial learns only the change and not who is in the picture. It is off by default, and with it off the slider works as in the original. On, for the picture models:
+>
+> - **Lines with their own epochs** in every box (What the picture is, the +1 and -1 ends, Leave these alone): epochs 5-8, every 2nd, from epoch 10 on. Coloured epoch bars show which lines overlap.
+> - **A plan**, "What it trains on, epoch by epoch", to check before Start.
+> - **Push strength by epoch**: one number, a Split or a Slide.
+> - **Reuse practice pictures** when a description comes back.
+> - **Adjust each section**: a section's own learning rate, fine detail (MOSS-Image), push strength and how firmly it holds the Leave-these-alone prompts.
+> - **Pair +1 and -1 lines**, **Paste several lines**, load lines from a file, Auto-fill epochs and Undo.
+> - **The Run card** edits the lines and the push strength during a run, with the same epoch bars and a mark at the epoch in progress.
+>
+> Tested on a GPU with MOSS-Image (RTX 4090, Windows); the other picture models share the same code. To use it, install as described below, but from this repository: `git clone https://github.com/pastuh/Fizgig.git`. The updater then updates from this fork. Full description and test notes: [shootthesound/Fizgig#362](https://github.com/shootthesound/Fizgig/pull/362).
+
+<details>
+<summary><b>Screenshot:</b> the Slider card with the switch on</summary>
+<br>
+<img src="https://github.com/user-attachments/assets/274b0648-6a6b-4c36-a9d0-4333b9c8667a" width="700" alt="The Slider card with Change the prompts during the run on: two pairs of +1/-1 lines changing at epoch 5, push strength as a Split, and the plan below">
+</details>
+
+---
+
 <h1 align="center">Fizgig — LoRA & Fine-tune Studio for Klein 9B, Flux 3 Image Klein, Fibo 2.0, Krea 2, MiniMax H3, Vimoo 1.0 Lite, Qwen Image 2.1, MOSS-Image, Z-Image Turbo &amp; Base, SDXL &amp; Anima</h1>
 
 <p align="center">
